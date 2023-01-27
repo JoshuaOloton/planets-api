@@ -6,6 +6,10 @@ from flask_jwt_extended import jwt_required
 from operator import itemgetter
 
 
+@planets.route('/')
+def home():
+    return 'Planets HOME'
+
 @planets.route('/planets/', methods=['GET'])
 def get_planets():
     planets = Planet.query.all()
